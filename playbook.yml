@@ -1,0 +1,16 @@
+---
+- hosts: oci
+  user: ubuntu 
+  become: true
+  vars:
+    username: ansible
+    public_key: ~/.ssh/id_rsa.pub
+  roles: 
+   - common
+   - ufw
+   - user
+   - nginx
+   - php
+   - mariadb
+   - wp-cli
+   - ssh
