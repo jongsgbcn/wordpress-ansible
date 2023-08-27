@@ -7,10 +7,10 @@
     public_key: ~/.ssh/id_rsa.pub
   roles: 
    - common
-   - ufw
-   - user
+   #- ufw
+   #- user
    - nginx
    - php
    - mariadb
-   - wp-cli
-   - ssh
+   #- wp-cli
+   #- ssh

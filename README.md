@@ -25,8 +25,8 @@ Configure your [hosts file](https://github.com/A5hleyRich/wordpress-ansible/blob
 192.168.1.1 #sampledomain.com
 ```
 
-Edit [provision.yml](https://github.com/A5hleyRich/wordpress-ansible/blob/master/provision.yml) to configure your default user, [hashed](https://docs.ansible.com/ansible/latest/reference_appendices/faq.html#how-do-i-generate-encrypted-passwords-for-the-user-module) sudo password and local public key path. This will create a new user on the provisioned servers that you can use to gain SSH access.
+Edit [playbook.yml](https://github.com/A5hleyRich/wordpress-ansible/blob/master/playbook.yml) to configure your default user, [hashed](https://docs.ansible.com/ansible/latest/reference_appendices/faq.html#how-do-i-generate-encrypted-passwords-for-the-user-module) sudo password and local public key path. This will create a new user on the provisioned servers that you can use to gain SSH access.
 
 Run:
 
-`ansible-playbook provision.yml`
+`ansible-playbook playbook.yml`
