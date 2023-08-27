@@ -9,36 +9,3 @@
     state: present
     force: yes
     update_cache: yes
-
-- name: Check Nginx configs exist
-  stat: path=/etc/nginx/.git
-  register: git_exists
-
-- name: Remove default Nginx configs
-  file:
-    path: /etc/nginx
-    state: absent
-  when: not git_exists.stat.exists
-
-- name: Clone Nginx configs
-  git:
-    repo: https://github.com/jongsgbcn/wordpress-ansible.git
-    dest: /etc/nginx
-    version: master
-    force: yes
-  when: not git_exists.stat.exists
-
-- name: Symlink default site
-  file:
-    src: /etc/nginx/sites-available/default
-    dest: /etc/nginx/sites-enabled/default
-    state: link
-  notify: reload nginx
-
-- name: Set Nginx user
-  lineinfile:
-    dest: /etc/nginx/nginx.conf
-    regexp: "^user"
-    line: "user {{ username }};"
-    state: present
-  notify: restart nginx

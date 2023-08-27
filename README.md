@@ -29,4 +29,4 @@ Edit [playbook.yml](https://github.com/A5hleyRich/wordpress-ansible/blob/master/
 
 Run:
 
-`ansible-playbook playbook.yml`
+`ansible-playbook playbook.yml  -i inventory -u username`
